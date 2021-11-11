@@ -36,26 +36,27 @@ int main()
 				}             
 				printf("%d",day);
 			}
-				for(j=week+1;j<6;j++)
+			for(j=week+1;j<6;j++)
+			{
+				putchar(' ');
+				day++;
+				printf(" %d",day);
+			}
+			putchar('\n');
+			while(a[month-1]-day>0)
+			{
+				for(j=0;j<7;j++)
 				{
-					putchar(' ');
 					day++;
+					if(day<10)
+					putchar(' ');
+					if(day>a[month-1])
+						break;
 					printf(" %d",day);
-				}
-				putchar('\n');
-				while(a[month-1]-day>0)
-				{
-					for(j=0;j<7;j++)
-					{
-						day++;
-						if(day<10)
-							putchar(' ');
-						if(day>a[month-1])
-							break;
-						printf(" %d",day);
 					}
-					putchar('\n');
-				}
+				putchar('\n');
+			}
+			
 			if(month==13)
 				month=1;
 			if(month==14)
@@ -63,8 +64,6 @@ int main()
 				month=2;
 				year++;
 			}	
-			
-			
 		}
 	}
 	else
